@@ -11,15 +11,17 @@ namespace ShapeDrawer
         private float _y;
         private int _width;
         private int _height;
+        private bool _selected;
 
         // constructor
-        public Shape()
+        public Shape(float x, float y)
         {
             _color = Color.Green;
-            _x = 0;
-            _y = 0;
+            _x = x;
+            _y = y;
             _width = 100;
             _height = 100;
+            _selected = false;
         }
 
         // properties 
@@ -81,10 +83,26 @@ namespace ShapeDrawer
             }
         }
 
+        public bool Selected
+        {
+            get
+            {
+                return _selected;
+            }
+            set
+            {
+                _selected = value;
+            }
+        }
+
         // methods 
         public void Draw()
         {
             SplashKit.FillRectangle(_color, _x, _y, _width, _height);
+            if (_selected )
+            {
+                DrawOutline();
+            }
         }
 
         public bool IsAt(Point2D pt)
@@ -105,6 +123,11 @@ namespace ShapeDrawer
                 return false;
             }
 
+        }
+
+        public void DrawOutline()
+        {
+            SplashKit.FillRectangle(Color.Black, _x - 2, _y - 2, _width + 4, _height + 4);
         }
        
 

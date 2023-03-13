@@ -1,4 +1,3 @@
-using System;
 using SplashKitSDK;
 
 namespace ShapeDrawer
@@ -9,29 +8,36 @@ namespace ShapeDrawer
         {
             Window window = new Window("Shape Drawer", 800, 600);
 
-            Shape myShape = new Shape();
-
+            Drawing drawing = new Drawing();
             do
             {
                 SplashKit.ProcessEvents();
                 SplashKit.ClearScreen();
 
+                // add new shape
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
-                    myShape.X = SplashKit.MouseX();
-                    myShape.Y = SplashKit.MouseY();
+                    drawing.AddShape(new Shape(SplashKit.MouseX(), SplashKit.MouseY()));
                 }
 
-                if (myShape.IsAt(SplashKit.MousePosition()))
+                // delete a shape 
+                if (SplashKit.KeyTyped(KeyCode.BackspaceKey) || SplashKit.KeyTyped(KeyCode.DeleteKey))
                 {
-                    if (SplashKit.KeyTyped(KeyCode.SpaceKey))
-                    {
-                        myShape.Color = Color.RandomRGB(255);
-                    }
+                    drawing.DeleteShape();
+                }
+                // select a shape
+                if (SplashKit.MouseClicked(MouseButton.RightButton))
+                {
+                    drawing.SelectShapesAt(SplashKit.MousePosition());
                 }
 
-                myShape.Draw();
-
+                // change background color
+                if (SplashKit.KeyTyped(KeyCode.SpaceKey))
+                {
+                    drawing.Background = Color.Random();
+                }
+              
+                drawing.Draw();
                 SplashKit.RefreshScreen();
          
             } while (!window.CloseRequested);
