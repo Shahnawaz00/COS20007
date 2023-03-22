@@ -11,7 +11,7 @@ namespace TestSwinAdventure
         [SetUp]
         public void SetUp()
         {
-            id = new IdentifiableObject(new string[] { "shah", "shehraz" });
+            id = new IdentifiableObject(new string[] { "SHAH", "shehraz" });
             emptyId = new IdentifiableObject(new string[] { });
         } 
 
@@ -36,13 +36,13 @@ namespace TestSwinAdventure
         [Test]
         public void TestFirstId()
         {
-            Assert.That(id.FirstId, Is.SameAs("shah"));
+            Assert.That(id.FirstId, Is.EqualTo("shah"));
         }
 
         [Test]
         public void TestFirstIdWithNoIds()
         {
-            Assert.That(emptyId.FirstId, Is.SameAs(""));
+            Assert.That(emptyId.FirstId, Is.EqualTo(""));
         }
 
         [Test]
