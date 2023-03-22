@@ -9,9 +9,13 @@ namespace ShapeDrawer
 {
     public class Drawing
     {
+        //variables
         private readonly List<Shape> _shapes;
         private Color _background;
 
+        //properties
+
+        //number of shapes in list, readonly
         public int ShapeCount
         {
             get
@@ -19,6 +23,8 @@ namespace ShapeDrawer
                 return _shapes.Count;
             }
         }
+
+        // background color
         public Color Background
         {
             get
@@ -30,6 +36,8 @@ namespace ShapeDrawer
                 _background = value;
             }
         }
+
+        //list of shapes that are currently selected 
         public List<Shape> SelectedShapes
         {
             get
@@ -48,16 +56,20 @@ namespace ShapeDrawer
             }
         }
 
+        //constructer that accepts color as a parameter for the background
         public Drawing(Color background)
         {
             _shapes = new List<Shape>();
             _background = background;
         }
+
+        //default constructor 
         public Drawing() : this (Color.White)
         {
             
         }
 
+        //methods 
         public void AddShape(Shape shape)
         {
             _shapes.Add(shape);
@@ -74,6 +86,7 @@ namespace ShapeDrawer
 
         public void SelectShapesAt(Point2D pt)
         {
+            // checks if mouse position is over a shape, if true then its selected property is set to true
             foreach (Shape s in _shapes)
             {
                 if (s.IsAt(pt))
@@ -88,33 +101,16 @@ namespace ShapeDrawer
 
         public void DeleteShape()
         {
-            //Shape deletedShape;
-            //foreach (Shape s in _shapes)
-            //{
-            //    if (s.Selected)
-            //    {
-            //        deletedShape = s;
-            //    }
-            //}
-            //_shapes.Remove(deletedShape);
-
+            // new variable initiated since list cannot be modified while being enumerated 
+            Shape deletedShape = new Shape(0, 0);
             foreach (Shape s in _shapes)
             {
                 if (s.Selected)
                 {
-                    _shapes.Remove(s);
-                    break;
+                    deletedShape = s;
                 }
             }
-
-            //foreach (Shape s in _shapes.ToList())
-            //{
-            //    if (s.Selected)
-            //    {
-            //        _shapes.Remove(s);
-            //        break;
-            //    }
-            //}
+            _shapes.Remove(deletedShape);
         }
     }
 }
