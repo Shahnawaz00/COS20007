@@ -1,6 +1,5 @@
 # COS20007 - Object Oriented Programming
 
-Files are ordered in a weekly basis with the program name rather than the number.
+Files are ordered in a weekly basis. 
 
-Programs that iterate every week are in seperate files outside of the weekly folders.
-Only the up-to-date program is visible, for previous iterations it should be visible on commit history.
+Programs that iterate every week are in seperate files, but the pdf of that iteration exists in their respective weekly folders. Alternatively, the commit history can display previous iterations.
