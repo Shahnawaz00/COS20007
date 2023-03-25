@@ -65,5 +65,18 @@ namespace DrawingProgram
         {
             return SplashKit.PointOnLine(pt, SplashKit.LineFrom(X, Y, X2, Y2), 5);
         }
+        public override void SaveTo(StreamWriter writer)
+        {
+            writer.WriteLine("Line");
+            base.SaveTo(writer);
+            writer.WriteLine(X2);
+            writer.WriteLine(Y2);
+        }
+        public override void LoadFrom(StreamReader reader)
+        {
+            base.LoadFrom(reader);
+            X2 = reader.ReadInteger();
+            Y2 = reader.ReadInteger();
+        }
     }
 }

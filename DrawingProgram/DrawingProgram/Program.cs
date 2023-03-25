@@ -113,6 +113,25 @@ namespace DrawingProgram
                     drawing.Background = Color.Random();
                 }
 
+                // save drawing
+                if (SplashKit.KeyTyped(KeyCode.SKey))
+                {
+                    drawing.Save("/Users/shahn/Desktop/TestDrawing.txt");
+                }
+
+                //load drawing 
+                if (SplashKit.KeyTyped(KeyCode.OKey))
+                {
+                    try
+                    {
+                        drawing.Load("C:/Users/shahn/Desktop/TestDrawing.txt");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Error.WriteLine($"Error loading file: {e.Message}");
+                    }
+                }
+
                 drawing.Draw();
                 SplashKit.RefreshScreen();
 

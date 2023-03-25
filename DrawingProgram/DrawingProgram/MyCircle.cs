@@ -74,5 +74,17 @@ namespace DrawingProgram
             return SplashKit.PointInCircle(pt, circle); 
 
         }
+
+        public override void SaveTo(StreamWriter writer)
+        {
+            writer.WriteLine("Circle");
+            base.SaveTo(writer);
+            writer.WriteLine(Radius);
+        }
+        public override void LoadFrom(StreamReader reader)
+        {
+            base.LoadFrom(reader);
+            Radius = reader.ReadInteger();
+        }
     }
 }

@@ -79,5 +79,20 @@ namespace DrawingProgram
             };
             return SplashKit.PointInRectangle(pt, rectangle);
         }
+
+        public override void SaveTo(StreamWriter writer)
+        {
+            writer.WriteLine("Rectangle");
+            base.SaveTo(writer);
+            writer.WriteLine(Width);
+            writer.WriteLine(Height);
+        }
+
+        public override void LoadFrom(StreamReader reader)
+        {
+            base.LoadFrom(reader);
+            Width = reader.ReadInteger();
+            Height = reader.ReadInteger();
+        }
     }
 }

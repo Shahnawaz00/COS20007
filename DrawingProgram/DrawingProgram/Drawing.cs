@@ -112,5 +112,68 @@ namespace DrawingProgram
                 }
             }
         }
+
+        public void Save(string filename)
+        {
+            StreamWriter writer = new StreamWriter(filename);
+            try
+            {
+                writer.WriteColor(_background);
+                writer.WriteLine(ShapeCount);
+
+
+                foreach (Shape s in _shapes)
+                {
+                    s.SaveTo(writer);
+                }
+            }
+            finally
+            {
+                writer.Close();
+            }
+        }
+
+        public void Load(string filename)
+        {
+            StreamReader reader = new StreamReader(filename);
+            try
+            {
+                Shape s;
+                string kind;
+
+                Background = reader.ReadColor();
+                int count = reader.ReadInteger();
+
+                _shapes.Clear();
+
+                for (int i = 0; i < count; i++)
+                {
+                    kind = reader.ReadLine();
+
+                    switch (kind)
+                    {
+                        case "Rectangle":
+                            s = new MyRectangle();
+                            break;
+                        case "Circle":
+                            s = new MyCircle();
+                            break;
+                        case "Line":
+                            s = new MyLine();
+                            break;
+                        default:
+                            throw new InvalidDataException("Unknown shape kind: " + kind);
+                    }
+
+                    s.LoadFrom(reader);
+                    AddShape(s);
+                }
+            } 
+            finally
+            {
+                reader.Close();
+            }
+            
+        }
     }
 }

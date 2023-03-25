@@ -74,7 +74,18 @@ namespace DrawingProgram
         public abstract bool IsAt(Point2D pt);
         public abstract void DrawOutline();
 
-
+        public virtual void SaveTo(StreamWriter writer)
+        {
+            writer.WriteColor(Color);
+            writer.WriteLine(X);
+            writer.WriteLine(Y);
+        }
+        public virtual void LoadFrom(StreamReader reader)
+        {
+            Color = reader.ReadColor();
+            X = reader.ReadInteger();
+            Y = reader.ReadInteger();
+        }
     }
 
 }

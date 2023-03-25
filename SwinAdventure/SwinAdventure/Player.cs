@@ -28,11 +28,12 @@ namespace SwinAdventure
             if (AreYou(id))
             {
                 return this;
-            } 
-            else
+            }
+            else if (_inventory.HasItem(id))
             {
                 return _inventory.Fetch(id);
             }
+            else return null;
         }
 
         //properties

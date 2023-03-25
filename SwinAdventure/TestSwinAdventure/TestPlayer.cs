@@ -44,7 +44,7 @@ namespace TestSwinAdventure
         [Test]
         public void TestLocateNothing()
         {
-            Assert.That(player.Locate("hello"), Is.SameAs(null));
+            Assert.That(player.Locate("scythe"), Is.SameAs(null));
         }
 
         [Test]
