@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SwinAdventure
 {
-    public class Bag : Item
+    public class Bag : Item, IHaveInventory
     {
         //local variables
         private Inventory _inventory;

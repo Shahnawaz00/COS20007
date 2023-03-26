@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace SwinAdventure
 {
-    public class Player : GameObject
+    public class Player : GameObject, IHaveInventory
     {
         //local variables
         // inventory of items of the player
         private Inventory _inventory;
+        private Location _location;
 
         //comstructor
         public Player(string name, string desc) : base(new string[] {"me", "inventory"}, name, desc) 
         {
             _inventory = new Inventory();
         }
-
+         
         //methods
 
         //locate method that returns a gameobject based on the id.
@@ -32,6 +33,10 @@ namespace SwinAdventure
             else if (_inventory.HasItem(id))
             {
                 return _inventory.Fetch(id);
+            }
+            else if (_location != null)
+            {
+                return _location.Locate(id);
             }
             else return null;
         }
@@ -48,5 +53,10 @@ namespace SwinAdventure
         }
 
         public Inventory Inventory => _inventory;
+        public Location Location
+        {
+            get => _location;
+            set => _location = value;
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace TestSwinAdventure
     {
         Player player;
         Item sword;
+        Location location;
+        Item gem;
 
         [SetUp]
         public void Setup()
@@ -18,10 +20,16 @@ namespace TestSwinAdventure
             player = new Player("shah", "the student");
             sword = new Item(new string[] { "Sword" }, "a bronze sword", "This is a bronze sword");
             player.Inventory.Put(sword);
+
+            gem = new Item(new string[] { "gem" }, "a gem", "a bright red crystal");
+            location = new Location("garden", "This is a garden");
+            location.Inventory.Put(gem);
+
+            player.Location = location;
         }
 
         [Test]
-        public void TestIsIdentifiable() 
+        public void TestIsIdentifiable()
         {
             Assert.That(player.AreYou("me"), Is.True);
             Assert.That(player.AreYou("inventory"), Is.True);
@@ -47,6 +55,17 @@ namespace TestSwinAdventure
             Assert.That(player.Locate("scythe"), Is.SameAs(null));
         }
 
+        [Test]
+        public void TestLocateLocation()
+        {
+            Assert.That(player.Locate("room"), Is.SameAs(location));
+        }
+
+        [Test] 
+        public void TestLocateItemInLocation()
+        {
+            Assert.That(player.Locate("gem"), Is.SameAs(gem));
+        }
         [Test]
         public void TestFullDescription()
         {

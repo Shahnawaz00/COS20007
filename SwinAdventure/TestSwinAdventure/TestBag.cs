@@ -56,7 +56,7 @@ namespace TestSwinAdventure
         public void TestFullDescription()
         {
             Assert.That(bag.FullDescription,
-                Is.EqualTo("In the bag you can see:\n" + bag.Inventory.ItemList));
+                Is.EqualTo("In the bag you can see:\npurse (purse)\na bronze sword (sword)\n"));
         }
 
         [Test]
