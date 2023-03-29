@@ -41,6 +41,10 @@ namespace SwinAdventure
             else return null;
         }
 
+        public void Move(Path path)
+        {
+            _location = path.Destination;
+        }
         //properties
 
         // override FullDescription property to include the player's name, and the shortdescription of themselves and their items in their inventory

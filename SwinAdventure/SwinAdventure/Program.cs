@@ -33,27 +33,39 @@
             // setting up location 
             Item key = new Item(new string[] { "key" }, "a key", "This is a key");
             Location hallway = new Location("the hallway", "This is the main hallway");
-            
+            Location garden = new Location("the garden", "This is a garden");
+
+            Path hallwaySouth = new Path(new string[] { "south", "s" }, "south", "kold", garden);
+            hallway.AddPath(hallwaySouth);
+
+
             hallway.Inventory.Put(key);
             player.Location = hallway;
 
             // command loop
             bool quit = false;
             string cmd;
+            string[] cmdInArray;
             LookCommand look = new LookCommand();
+            MoveCommand move = new MoveCommand();
 
             while (!quit)
             {
                 Console.WriteLine("\nCommand:");
                 cmd = Console.ReadLine();
+                cmdInArray = cmd.ToLower().Split();
 
                 if (cmd == "quit")
                 {
                     quit = true;
                 }
+                else if (cmdInArray[0] == "look")
+                {
+                    Console.WriteLine(look.Execute(player, cmdInArray));
+                }
                 else
                 {
-                    Console.WriteLine(look.Execute(player, cmd.ToLower().Split()));
+                    Console.WriteLine(move.Execute(player, cmdInArray));
                 }
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Path = SwinAdventure.Path;
 
 namespace TestSwinAdventure
 {
@@ -12,6 +13,8 @@ namespace TestSwinAdventure
         Player player;
         Item sword;
         Location location;
+        Location destination;
+        Path path;
         Item gem;
 
         [SetUp]
@@ -23,7 +26,10 @@ namespace TestSwinAdventure
 
             gem = new Item(new string[] { "gem" }, "a gem", "a bright red crystal");
             location = new Location("garden", "This is a garden");
+            destination = new Location("a house", "This is a house");
+            path = new Path(new string[] { "south" }, "south", "this is south", destination);
             location.Inventory.Put(gem);
+            location.AddPath(path);
 
             player.Location = location;
         }
@@ -71,6 +77,13 @@ namespace TestSwinAdventure
         {
             Assert.That(player.FullDescription,
                 Is.EqualTo("You are shah, the student.\nYou are carrying:\na bronze sword (sword)\n"));
+        }
+
+        [Test]
+        public void TestMove()
+        {
+            player.Move(path);
+            Assert.That(player.Location, Is.SameAs(destination));
         }
     }
 }
