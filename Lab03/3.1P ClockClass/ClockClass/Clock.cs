@@ -8,9 +8,9 @@ namespace ClockClass
 {
     public class Clock
     {
-        Counter _hrs = new Counter("hrs");
-        Counter _mins = new Counter("mins");
-        Counter _secs = new Counter("secs");
+        private Counter _hrs = new Counter("hrs");
+        private Counter _mins = new Counter("mins");
+        private Counter _secs = new Counter("secs");
 
         public Counter Hours
         {

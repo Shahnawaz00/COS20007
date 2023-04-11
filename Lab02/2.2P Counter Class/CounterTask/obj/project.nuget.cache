@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pE5CfLaTrsVvvK6/6iTigFgSSk9CQd1O7W5yA4a/t0XMKseJu8nSa8bbJylgYtuUUjyuEOJLK1WHXI+SuRySIw==",
+  "dgSpecHash": "Rwksyf+MxVePF1Pn9nA6Guz84uX1G+mG8gxNM+StnkNuYG8e7JhaJh1Qb/G03pmj7lHg5GpF5Y9KAmzh2RPtgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab02\\CounterTask\\CounterTask\\CounterTask.csproj",
+  "projectFilePath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab02\\2.2P Counter Class\\CounterTask\\CounterTask.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

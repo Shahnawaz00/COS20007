@@ -61,5 +61,26 @@ namespace TestClockClass
             Assert.That(myClock.Hours.Ticks, Is.EqualTo(0));
         }
 
+        [Test]
+        public void Reset()
+        {
+
+            for (int i = 0; i < 43200; i++)
+            {
+                myClock.Tick();
+            }
+            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Hours.Ticks, Is.EqualTo(12));
+
+            for (int i = 0; i < 43200; i++)
+            {
+                myClock.Tick();
+            }
+            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Hours.Ticks, Is.EqualTo(0));
+        }
+
     }
 }

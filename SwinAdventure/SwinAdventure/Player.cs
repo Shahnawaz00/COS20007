@@ -56,11 +56,23 @@ namespace SwinAdventure
             }
         }
 
-        public Inventory Inventory => _inventory;
+        public Inventory Inventory
+        {
+            get
+            {
+                return _inventory;
+            }
+        }
         public Location Location
         {
-            get => _location;
-            set => _location = value;
+            get
+            {
+                return _location;
+            }
+            set
+            {
+                _location = value;
+            }
         }
     }
 }

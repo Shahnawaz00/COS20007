@@ -19,12 +19,35 @@ namespace SwinAdventure
             _description = desc;
         }
 
-        //properties, using the => shorthand since theyre all read only
-        public string Name => _name;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+        }
 
-        public string Description => _description;
-        public string ShortDescription => $"{Name} ({FirstId})";
-        public virtual string FullDescription => _description;
+        public string Description
+        {
+            get
+            {
+                return _description;
+            }
+        }
+        public string ShortDescription
+        {
+            get
+            {
+                return $"{Name} ({FirstId})";
+            }
+        }
+        public virtual string FullDescription
+        {
+            get
+            {
+                return _description;
+            }
+        }
 
     }
 }

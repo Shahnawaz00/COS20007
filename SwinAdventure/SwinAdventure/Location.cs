@@ -96,6 +96,12 @@ namespace SwinAdventure
                 return $"You are in {Name}\n{Description}\n{PathList}\nIn this room you can see:\n{_inventory.ItemList}";
             }
         }
-        public Inventory Inventory => _inventory;
+        public Inventory Inventory
+        {
+            get
+            {
+                return _inventory;
+            }
+        }
     }
 }

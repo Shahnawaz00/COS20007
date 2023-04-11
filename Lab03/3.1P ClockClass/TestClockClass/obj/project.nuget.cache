@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5anByZwmFPMKE1YvSMlLj1vKginRfNzkRWiPnkkekFAVYxYojafTPmicRj6vYIBz+osh1gZoIoFsofc9nXuJ7g==",
+  "dgSpecHash": "KhaoTzYxo1CVaiPmFzOlv+6avX4BI/DM2J4D6XmSmOTno0PIlkfX1hqqgAF4vnYrLsQDEyQaqbHE8jkHhJhJNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\ClockClass\\TestClockClass\\TestClockClass.csproj",
+  "projectFilePath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\3.1P ClockClass\\TestClockClass\\TestClockClass.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shahn\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\shahn\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

@@ -15,14 +15,32 @@ namespace SwinAdventure
             _destination = destination;
         }
 
-        public Location Destination => _destination;
+        public Location Destination
+        {
+            get
+            {
+                return _destination;
+            }
+        }
 
-        public override string FullDescription => $"At {Name} lies {Destination.Name}";
+        public override string FullDescription
+        {
+            get
+            {
+                return $"At {Name} lies {Destination.Name}";
+            }
+        }
 
         public bool IsLocked
         {
-            get => _isLocked; 
-            set => _isLocked = value; 
+            get
+            {
+                return _isLocked;
+            }
+            set 
+            { 
+                _isLocked = value;
+            }
         }
     }
 }

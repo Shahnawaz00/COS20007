@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\ClockClass\\ClockClass\\ClockClass.csproj": {}
+    "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\3.1P ClockClass\\ClockClass\\ClockClass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\ClockClass\\ClockClass\\ClockClass.csproj": {
+    "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\3.1P ClockClass\\ClockClass\\ClockClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\ClockClass\\ClockClass\\ClockClass.csproj",
+        "projectUniqueName": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\3.1P ClockClass\\ClockClass\\ClockClass.csproj",
         "projectName": "ClockClass",
-        "projectPath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\ClockClass\\ClockClass\\ClockClass.csproj",
+        "projectPath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\3.1P ClockClass\\ClockClass\\ClockClass.csproj",
         "packagesPath": "C:\\Users\\shahn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\ClockClass\\ClockClass\\obj\\",
+        "outputPath": "C:\\Users\\shahn\\source\\repos\\oop\\Lab03\\3.1P ClockClass\\ClockClass\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
