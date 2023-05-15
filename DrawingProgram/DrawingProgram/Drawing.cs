@@ -93,10 +93,7 @@ namespace DrawingProgram
                 {
                     s.Selected = true;
                 }
-                else
-                {
-                    s.Selected = false;
-                }
+                
             }
         }
 

@@ -46,26 +46,21 @@
             bool quit = false;
             string cmd;
             string[] cmdInArray;
-            LookCommand look = new LookCommand();
-            MoveCommand move = new MoveCommand();
+            CommandProcessor command = new CommandProcessor();
 
             while (!quit)
             {
                 Console.WriteLine("\nCommand:");
-                cmd = Console.ReadLine();
-                cmdInArray = cmd.ToLower().Split();
+                cmd = Console.ReadLine().ToLower();
+                cmdInArray = cmd.Split();
 
                 if (cmd == "quit")
                 {
                     quit = true;
                 }
-                else if (cmdInArray[0] == "look")
-                {
-                    Console.WriteLine(look.Execute(player, cmdInArray));
-                }
                 else
                 {
-                    Console.WriteLine(move.Execute(player, cmdInArray));
+                    Console.WriteLine(command.Execute(player, cmdInArray));
                 }
             }
         }

@@ -12,27 +12,6 @@ namespace ClockClass
         private Counter _mins = new Counter("mins");
         private Counter _secs = new Counter("secs");
 
-        public Counter Hours
-        {
-            get
-            {
-                return _hrs;
-            }
-        }
-        public Counter Minutes
-        {
-            get
-            {
-                return _mins;
-            }
-        }
-        public Counter Seconds
-        {
-            get
-            {
-                return _secs;
-            }
-        }
 
         public void Tick()
         {
@@ -61,9 +40,20 @@ namespace ClockClass
             }
         }
 
-        public void Print()
+        public void Reset()
         {
-            Console.WriteLine("{0}:{1}:{2}", _hrs.Ticks.ToString("00"), _mins.Ticks.ToString("00"), _secs.Ticks.ToString("00"));
+            _hrs.Reset();
+            _mins.Reset();
+            _secs.Reset();
+        }
+
+        public string Time
+        {
+            get
+            {
+                return $"{_hrs.Ticks.ToString("00")}:{_mins.Ticks.ToString("00")}:{_secs.Ticks.ToString("00")}";
+
+            }
         }
     }
 }

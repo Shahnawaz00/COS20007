@@ -1,0 +1,15 @@
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.csproj.AssemblyReference.cache
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.AssemblyInfoInputs.cache
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.AssemblyInfo.cs
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.csproj.CoreCompileInputs.cache
+C:\Users\shahn\source\repos\oop\SpaceGame\bin\Debug\net6.0\SpaceGame.exe
+C:\Users\shahn\source\repos\oop\SpaceGame\bin\Debug\net6.0\SpaceGame.deps.json
+C:\Users\shahn\source\repos\oop\SpaceGame\bin\Debug\net6.0\SpaceGame.runtimeconfig.json
+C:\Users\shahn\source\repos\oop\SpaceGame\bin\Debug\net6.0\SpaceGame.dll
+C:\Users\shahn\source\repos\oop\SpaceGame\bin\Debug\net6.0\SpaceGame.pdb
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.dll
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\refint\SpaceGame.dll
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.pdb
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\SpaceGame.genruntimeconfig.cache
+C:\Users\shahn\source\repos\oop\SpaceGame\obj\Debug\net6.0\ref\SpaceGame.dll

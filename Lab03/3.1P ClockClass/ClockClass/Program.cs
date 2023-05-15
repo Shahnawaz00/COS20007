@@ -9,8 +9,9 @@
             for (int i = 0; i < 10000; i++)
             {
                 myClock.Tick();
+                Console.WriteLine(myClock.Time);
+
             }
-            myClock.Print();
         }
     }
 }

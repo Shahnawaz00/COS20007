@@ -20,9 +20,7 @@ namespace TestClockClass
             {
                 myClock.Tick();
             }
-            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(30));
-            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Hours.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Time, Is.EqualTo("00:00:30"));
         }
 
         [Test]
@@ -32,9 +30,7 @@ namespace TestClockClass
             {
                 myClock.Tick();
             }
-            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(30));
-            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(1));
-            Assert.That(myClock.Hours.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Time, Is.EqualTo("00:01:30"));
         }
 
         [Test]
@@ -44,9 +40,7 @@ namespace TestClockClass
             {
                 myClock.Tick();
             }
-            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Hours.Ticks, Is.EqualTo(1));
+            Assert.That(myClock.Time, Is.EqualTo("01:00:00"));
         }
 
         [Test]
@@ -56,9 +50,7 @@ namespace TestClockClass
             {
                 myClock.Tick();
             }
-            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Hours.Ticks, Is.EqualTo(0));
+            Assert.That(myClock.Time, Is.EqualTo("00:00:00"));
         }
 
         [Test]
@@ -69,17 +61,10 @@ namespace TestClockClass
             {
                 myClock.Tick();
             }
-            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Hours.Ticks, Is.EqualTo(12));
+            Assert.That(myClock.Time, Is.EqualTo("12:00:00"));
 
-            for (int i = 0; i < 43200; i++)
-            {
-                myClock.Tick();
-            }
-            Assert.That(myClock.Seconds.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Minutes.Ticks, Is.EqualTo(0));
-            Assert.That(myClock.Hours.Ticks, Is.EqualTo(0));
+            myClock.Reset();
+            Assert.That(myClock.Time, Is.EqualTo("00:00:00"));
         }
 
     }
