@@ -8,7 +8,7 @@ namespace SwinAdventure
 {
     public class CommandProcessor : Command
     {
-        List<Command> _commands;
+        private List<Command> _commands;
 
         public CommandProcessor() : base(new string[] { "command" })
         {

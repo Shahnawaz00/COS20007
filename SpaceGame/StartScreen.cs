@@ -9,8 +9,9 @@ namespace SpaceGame
 {
     public class StartScreen
     {
+        
         private Window _window;
-        private bool _startClicked;
+        private bool _startClicked; // check if start button was clicked
 
         public StartScreen(Window window)
         {
@@ -26,15 +27,19 @@ namespace SpaceGame
             }
         }
 
+        //draw start screen
         public void Draw()
         {
             // Draw the start screen graphics, including the start button and game instructions
             SplashKit.DrawText("Welcome to Space Shooter!", Color.White, "arial", 36, 200, 200);
             SplashKit.DrawText("Instructions:", Color.White, "arial", 24, 250, 300);
-            SplashKit.DrawText("- Use arrow keys to move the ship", Color.White, "arial", 20, 250, 350);
+            SplashKit.DrawText("- Use arrow keys or WASD to move the ship", Color.White, "arial", 20, 250, 350);
             SplashKit.DrawText("- Press the Spacebar to shoot bullets", Color.White, "arial", 20, 250, 380);
             SplashKit.DrawText("Click the Start button to begin", Color.White, "arial", 24, 250, 450);
-                
+            SplashKit.DrawText("asset credits: www.kenney.nl", Color.White, "arial", 24, 250, 480);
+
+
+            //make button
             Rectangle startButton = new Rectangle();
             startButton.X = 400;
             startButton.Y = 500;

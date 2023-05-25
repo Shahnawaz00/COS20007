@@ -9,13 +9,31 @@ namespace SpaceGame
 {
     public class PlayerShip : Ship
     {
+        //track player score and lives
         private int _lives;
         private int _score;
-        public PlayerShip(float x, float y, float speed, Bitmap shipBitmap, Bitmap bulletBitmap, Window window)
-            : base(x, y, speed, shipBitmap, bulletBitmap, window)
+
+        //store static bitmap
+        private static Bitmap _playerShipBitmap;
+
+        //static method to avoid bitmap reloading everytime a new instance of the class is created
+        //prevents dynamic change
+        //will have to change if planning to change sprite at runtime for powerups or anything else
+        static PlayerShip()
+        {
+            //load bullet image
+            _playerShipBitmap = SplashKit.BitmapNamed("playerShip");
+            if (_playerShipBitmap == null)
+            {
+                _playerShipBitmap = SplashKit.LoadBitmap("playerShip", @"c:\users\shahn\source\repos\oop\SpaceGame\assets\player.bmp");
+            }
+        }
+        public PlayerShip(float x, float y, float speed, Bitmap bulletBitmap, Window window)
+            : base(x, y, speed, bulletBitmap, window)
         {
             _lives = 3;
             _score = 0;
+            _shipBitmap = _playerShipBitmap;
         }
 
         public void Move(float deltaX, float deltaY)
@@ -32,6 +50,8 @@ namespace SpaceGame
         {
             _score += 10;
         }
+
+        
         public override PlayerBullet FireBullet()
         {
             float bulletX = _x + (_shipBitmap.Width / 2);

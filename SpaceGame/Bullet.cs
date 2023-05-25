@@ -9,12 +9,13 @@ namespace SpaceGame
 {
     public abstract class Bullet : IsCollidable
     {
+        //protected to allow access for subclasses
         protected float _x;
         protected float _y;
         protected float _speed;
-        protected Color _color;
+        protected Color _color;  // not using currently
         protected Window _window;
-        protected Bitmap? _bitmap;
+        protected Bitmap? _bitmap; // nullable to allow subclasses to have their own bitmap, but drawing here
 
         public Bullet(float x, float y, float speed, Color color, Window window)
         {
@@ -25,12 +26,15 @@ namespace SpaceGame
             _window = window;
         }
 
+        //draw on window
         public void Draw()
         {
             SplashKit.DrawBitmapOnWindow(_window, _bitmap, _x, _y);
         }
+        // update bullet movement
         public abstract void Update();
 
+        // for future use
         public bool IsCollidingWith(IsCollidable o)
         {
             return false;

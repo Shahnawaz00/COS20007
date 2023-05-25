@@ -36,7 +36,9 @@
             Location garden = new Location("the garden", "This is a garden");
 
             Path hallwaySouth = new Path(new string[] { "south", "s" }, "south", "kold", garden);
+            Path gardenNorth = new Path(new string[] { "north", "n" }, "north", "kold", hallway);
             hallway.AddPath(hallwaySouth);
+            garden.AddPath(gardenNorth);
 
 
             hallway.Inventory.Put(key);

@@ -43,6 +43,7 @@ namespace SpaceGame
             SplashKit.DrawText($"Score: {_score}", Color.White, "arial", 24, 400, 300);
             SplashKit.DrawText("Click Restart to play again", Color.White, "arial", 24, 350, 350);
 
+            //make button
             Rectangle restartButton = new Rectangle();
             restartButton.X = 400;
             restartButton.Y = 450;
@@ -59,6 +60,13 @@ namespace SpaceGame
             {
                 _restartClicked = true;
             }
-}
+        }
+
+        //reset if player starts again
+        public void Reset()
+        {
+            _restartClicked = false;
+            _score = 0;
+        }
     }
 }
