@@ -72,6 +72,7 @@ namespace SpaceGame
             StartScreen startScreen = new StartScreen(window);
             GameOverScreen gameOverScreen = new GameOverScreen(window, 0);
 
+           
 
             //load background
             SplashKit.LoadBitmap("background", @"c:\users\shahn\source\repos\oop\SpaceGame\assets\starBackground.bmp");
@@ -87,6 +88,8 @@ namespace SpaceGame
             //ememy ship and bullets
             List<EnemyBullet> enemyBullets = new List<EnemyBullet>();
             List<EnemyShip> enemyShips = new List<EnemyShip>();
+            EasyEnemy easyEnemy = new EasyEnemy();
+            HardEnemy hardEnemy = new HardEnemy();  
  
             //enemy ships spawn timer
             Timer enemySpawnTimer = new Timer("enemySpawn");
@@ -195,7 +198,17 @@ namespace SpaceGame
                     if (SplashKit.TimerTicks("enemySpawn") > 1000)
                     {
                         enemySpawnTimer.Reset();
-                        enemyShips.Add(new EnemyShip(random.Next(0, 1000), 0, 0.1f, SplashKit.BitmapNamed("enemyBullet"), window));
+                        enemyShips.Add(new EnemyShip(random.Next(0, 1000), 0, 0.1f, SplashKit.BitmapNamed("enemyBullet"), window, easyEnemy));
+
+                        //change enemy movement strategy based on how many points scored
+                        if (playerShip.Score > 20 )
+                        {
+                            foreach (var enemyShip in enemyShips)
+                            {
+                                enemyShip.Strategy = hardEnemy;
+                                continue;
+                            }
+                        } 
                     }
 
                     // check if player has collided with enemy bullets 

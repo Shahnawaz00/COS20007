@@ -10,6 +10,7 @@ namespace SpaceGame
     public class EnemyShip : Ship
     {
         private static Bitmap _enemyShipBitmap;
+        private EnemyStrategy _enemyStrategy;
 
         //static method to avoid bitmap reloading everytime a new instance of the class is created
         //will have to change if planning to change enemy ship based on difficulty 
@@ -23,17 +24,16 @@ namespace SpaceGame
             }
         }
 
-        public EnemyShip(float x, float y, float speed,Bitmap bulletBitmap, Window window)
+        public EnemyShip(float x, float y, float speed,Bitmap bulletBitmap, Window window, EnemyStrategy enemyStrategy)
             : base(x, y, speed, bulletBitmap, window)
         {
             _shipBitmap = _enemyShipBitmap;
+            _enemyStrategy = enemyStrategy;
         }
-
 
         public void Update()
         {
-            _y += _speed;
-
+            _enemyStrategy.Behaviour(ref _y,ref _speed);
            
         }
 
@@ -45,8 +45,21 @@ namespace SpaceGame
             return new EnemyBullet(bulletX, bulletY, _bulletSpeed, Color.Red, _window);
         }
 
+        //property to allow strategy to be changed at runtime 
+        public EnemyStrategy Strategy
+        {
+            get 
+            {
+                return _enemyStrategy;
+            }
+            set 
+            {
+                _enemyStrategy = value;
+            }
+        }
        
     }
+
 
 
 
